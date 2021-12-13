@@ -1,0 +1,29 @@
+{
+  "name": "uni-ts",
+  "version": "1.0.0",
+  "description": "Fully type-safe units for physical quantities",
+  "main": "main.ts",
+  "author": "Spencer Christiansen",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.12",
+    "jest": "^27.4.4",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.3"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 100
+  },
+  "scripts": {
+    "cli": "ts-node src/cli.ts",
+    "test": "jest",
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist build",
+    "ts-node": "ts-node"
+  }
+}
