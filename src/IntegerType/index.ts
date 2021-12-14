@@ -60,3 +60,6 @@ export type Subtract<A extends Num, B extends Num> = B extends `${infer SB}${inf
 
 export const subtract = <A extends Num, B extends Num>(a: A, b: B): Subtract<A, B> =>
   toIntType(toNumber(a) - toNumber(b));
+
+export const Two = add(One, One);
+export const Three = add(Two, One);
