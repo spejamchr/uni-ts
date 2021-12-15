@@ -1,19 +1,24 @@
 import { baseUnitForQuantity } from '../Measurement';
 import * as Q from '../Quantities';
 
-export const second = baseUnitForQuantity('time', 's');
-export const meter = baseUnitForQuantity('length', 'm');
-export const kilogram = baseUnitForQuantity('mass', 'kg');
-export const ampere = baseUnitForQuantity('electricCurrent', 'A');
-export const kelvin = baseUnitForQuantity('thermodynamicTemperature', 'K');
-export const mole = baseUnitForQuantity('amountOfSubstance', 'mol');
-export const candela = baseUnitForQuantity('luminousIntensity', 'cd');
+// SI Base Units
+
+export const second = baseUnitForQuantity(Q.time, 's');
+export const meter = baseUnitForQuantity(Q.length, 'm');
+export const kilogram = baseUnitForQuantity(Q.mass, 'kg');
+export const ampere = baseUnitForQuantity(Q.electricCurrent, 'A');
+export const kelvin = baseUnitForQuantity(Q.temperature, 'K');
+export const mole = baseUnitForQuantity(Q.amountOfSubstance, 'mol');
+export const candela = baseUnitForQuantity(Q.luminousIntensity, 'cd');
+
+// These are officially derived, but implementing them as base units helps the type system
+
+export const radian = baseUnitForQuantity(Q.planarAngle, 'rad');
+export const steradian = baseUnitForQuantity(Q.solidAngle, 'sr');
 
 // SI Derived Units
 
 export const gram = kilogram(0.001).named<Q.Mass>('g');
-export const radian = baseUnitForQuantity('planarAngle', 'rad');
-export const steradian = baseUnitForQuantity('solidAngle', 'sr');
 export const hertz = second(1).inverted().named<Q.Frequency>('Hz');
 export const newton = kilogram(1).times(meter(1)).per(second(1).squared()).named<Q.Force>('N');
 export const pascal = newton(1).per(meter(1).squared()).named<Q.Pressure>('Pa');

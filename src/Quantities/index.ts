@@ -1,17 +1,28 @@
 import { N, OneQuantity, Mul2, Mul3 } from '../Quantity';
 
 // Basic quantities
-export type Time = OneQuantity<'time'>;
-export type Length = OneQuantity<'length'>;
-export type Mass = OneQuantity<'mass'>;
-export type ElectricCurrent = OneQuantity<'electricCurrent'>;
-export type ThermodynamicTemperature = OneQuantity<'thermodynamicTemperature'>;
-export type AmountOfSubstance = OneQuantity<'amountOfSubstance'>;
-export type LuminousIntensity = OneQuantity<'luminousIntensity'>;
+export const time = 'time';
+export const length = 'length';
+export const mass = 'mass';
+export const electricCurrent = 'electricCurrent';
+export const temperature = 'temperature';
+export const amountOfSubstance = 'amountOfSubstance';
+export const luminousIntensity = 'luminousIntensity';
 
-// Not "real" quantities, but this makes the type system work out better
-export type PlanarAngle = OneQuantity<'planarAngle'>;
-export type SolidAngle = OneQuantity<'solidAngle'>;
+export type Time = OneQuantity<typeof time>;
+export type Length = OneQuantity<typeof length>;
+export type Mass = OneQuantity<typeof mass>;
+export type ElectricCurrent = OneQuantity<typeof electricCurrent>;
+export type Temperature = OneQuantity<typeof temperature>;
+export type AmountOfSubstance = OneQuantity<typeof amountOfSubstance>;
+export type LuminousIntensity = OneQuantity<typeof luminousIntensity>;
+
+// Not "real" quantities, but this helps the type system work out better
+export const planarAngle = 'planarAngle'
+export const solidAngle = 'solidAngle'
+
+export type PlanarAngle = OneQuantity<typeof planarAngle>;
+export type SolidAngle = OneQuantity<typeof solidAngle>;
 
 // Derived quantities
 export type Frequency = N<Time>;
