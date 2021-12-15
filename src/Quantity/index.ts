@@ -7,7 +7,7 @@ import {
   One,
   subtract as subtractInt,
   Subtract as SubtractInt,
-  Zero
+  Zero,
 } from '../IntegerType';
 
 export type Quantity = { [k in string]: Num };

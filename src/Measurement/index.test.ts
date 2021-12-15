@@ -1,6 +1,9 @@
 import { baseUnitForQuantity, Measurement, measurement } from '.';
-import { negate, One, Three, Two } from '../IntegerType';
+import { add, negate, One } from '../IntegerType';
 import { Quantity } from '../Quantity';
+
+const Two = add(One, One);
+const Three = add(Two, One);
 
 const testMeasurement =
   <A extends Quantity>(m: Measurement<A>) =>
