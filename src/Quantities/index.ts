@@ -45,3 +45,5 @@ export type AbsorbedDose = Mul2<Length> & N<Mul2<Time>>;
 export type EquivalentDose = AbsorbedDose;
 export type CatalyticActivity = AmountOfSubstance & N<Time>;
 export type Area = Mul2<Length>;
+export type Volume = Mul3<Length>;
+export type Acceleration = Length & N<Mul2<Time>>
