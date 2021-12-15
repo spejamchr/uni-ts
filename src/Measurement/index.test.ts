@@ -58,25 +58,25 @@ test('minus with derived works', () => {
 test('measurement.times works', () => {
   const t = testMeasurement(unitA(2).times(unitB(3)));
 
-  t('a b', 6, 1, { quantityA: One, quantityB: One });
+  t('a*b', 6, 1, { quantityA: One, quantityB: One });
 });
 
 test('times with derived works', () => {
   const t = testMeasurement(unitA(2).times(derived(3)));
 
-  t('a derived', 6, 50, { quantityA: Two });
+  t('a*derived', 6, 50, { quantityA: Two });
 });
 
 test('measurement.per works', () => {
   const t = testMeasurement(unitA(6).per(unitB(3)));
 
-  t('a (b)**-1', 2, 1, { quantityA: One, quantityB: negate(One) });
+  t('a*(b)^-1', 2, 1, { quantityA: One, quantityB: negate(One) });
 });
 
 test('per with derived works', () => {
   const t = testMeasurement(unitA(6).per(derived(2)));
 
-  t('a (derived)**-1', 3, 1 / 50, {});
+  t('a*(derived)^-1', 3, 1 / 50, {});
 });
 
 test('measurement.into works', () => {
@@ -94,37 +94,37 @@ test('into derived works', () => {
 test('measurement.inverted works', () => {
   const t = testMeasurement(unitA(3).inverted());
 
-  t('(a)**-1', 1 / 3, 1, { quantityA: negate(One) });
+  t('(a)^-1', 1 / 3, 1, { quantityA: negate(One) });
 });
 
 test('inverted on derived works', () => {
   const t = testMeasurement(derived(3).inverted());
 
-  t('(derived)**-1', 1 / 3, 1 / 50, { quantityA: negate(One) });
+  t('(derived)^-1', 1 / 3, 1 / 50, { quantityA: negate(One) });
 });
 
 test('measurement.squared works', () => {
   const t = testMeasurement(unitA(3).squared());
 
-  t('(a)**2', 9, 1, { quantityA: Two });
+  t('(a)^2', 9, 1, { quantityA: Two });
 });
 
 test('squared on derived works', () => {
   const t = testMeasurement(derived(3).squared());
 
-  t('(derived)**2', 9, 50 ** 2, { quantityA: Two });
+  t('(derived)^2', 9, 50 ** 2, { quantityA: Two });
 });
 
 test('measurement.cubed works', () => {
   const t = testMeasurement(unitA(3).cubed());
 
-  t('(a)**3', 27, 1, { quantityA: Three });
+  t('(a)^3', 27, 1, { quantityA: Three });
 });
 
 test('cubed on derived works', () => {
   const t = testMeasurement(derived(3).cubed());
 
-  t('(derived)**3', 27, 50 ** 3, { quantityA: Three });
+  t('(derived)^3', 27, 50 ** 3, { quantityA: Three });
 });
 
 test('measurement.named works', () => {
