@@ -1,5 +1,4 @@
 import { Add, Negate, Num, One, Subtract, Zero } from './IntegerType';
-import { convertTo, divide, multiply } from './Measurement';
 import { Add as AddQ, Quantity, Subtract as SubtractQ } from './Quantity';
 import { hour, kilo, meter, second } from './Units';
 
@@ -59,5 +58,5 @@ import { hour, kilo, meter, second } from './Units';
   testQ<SubtractQ<{ a: '+1'; b: '+1' }, { a: '+1' }>>({ b: '+1' });
   testQ<SubtractQ<{ length: '+1'; time: '+1' }, { time: '+1' }>>({ length: '+1' });
   testQ<AddQ<{ length: '+1'; time: '+1' }, { time: '-1' }>>({ length: '+1' });
-  convertTo(multiply(hour(5), divide(meter(1), second(1))))(kilo.meter);
+  hour(5).times(meter(1)).per(second(1)).into(kilo.meter);
 })();
